@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO.Ports;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class CodeBase : MonoBehaviour
 {
     SerialPort arduino = new SerialPort("COM3", 9600); //Colocar bien la entrada del arduino
     void Start()
