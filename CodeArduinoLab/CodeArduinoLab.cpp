@@ -1,6 +1,6 @@
 /* 
 
-// METODO 1 - framing por delimitador
+// METODO 1 - Framing por delimitador
 
 const int buttonPin4 = 4;
 const int buttonPin5 = 5;
