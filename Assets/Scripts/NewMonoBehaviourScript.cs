@@ -7,16 +7,20 @@ public class NewMonoBehaviourScript : MonoBehaviour
 {
     SerialPort arduino = new SerialPort("COM3", 9600); //Colocar bien la entrada del arduino
     void Start()
-{
-    try
     {
-        arduino.Open();
-        arduino.ReadTimeout = 100; // sube esto, 1ms es demasiado corto
+        try
+        {
+            arduino.Open();
+            arduino.ReadTimeout = 100; // sube esto, 1ms es demasiado corto
+        }
+        catch (System.TimeoutException)
+        {
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning(e.Message);
+        }
     }
-    catch (System.Exception)
-    {
-    }
-}
 
     void Update()
     {
@@ -25,27 +29,25 @@ public class NewMonoBehaviourScript : MonoBehaviour
             try
             {
                 string data = arduino.ReadLine().Trim();
+                string[] partes = data.Split(':');
+                string direccion = partes[0];
+                string velocidad;
+                if (partes.Length > 1){
+                    velocidad = partes[1];
+                }
+                else{
+                    velocidad = "SLOW";
+                }
+                float velocidadMovimiento = (velocidad == "FAST") ? 10f : 5f;
 
-                if (data == "UP")
-                {
-                    transform.Translate(Vector3.up * Time.deltaTime * 5);
-                    Debug.Log("UP");
-                }
-                else if (data == "RIGHT")
-                {
-                    transform.Translate(Vector3.right * Time.deltaTime * 5);
-                    Debug.Log("RIGHT");
-                }
-                else if (data == "LEFT")
-                {
-                    transform.Translate(Vector3.left * Time.deltaTime * 5);
-                    Debug.Log("LEFT");
-                }
-                else if (data == "STOP")
-                {
-                    transform.Translate(Vector3.zero);
-                    Debug.Log("STOP");
-                }
+                if (direccion.Contains("UP")) transform.Translate(Vector3.up * Time.deltaTime * velocidadMovimiento);
+                if (direccion.Contains("RIGHT")) transform.Translate(Vector3.right * Time.deltaTime * velocidadMovimiento);
+                if (direccion.Contains("LEFT")) transform.Translate(Vector3.left * Time.deltaTime * velocidadMovimiento);
+
+                if (direccion == "STOP") Debug.Log("STOP");
+            }
+            catch (System.TimeoutException)
+            {
             }
             catch (System.Exception e)
             {
