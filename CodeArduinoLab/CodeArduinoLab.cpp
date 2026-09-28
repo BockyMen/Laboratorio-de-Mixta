@@ -90,6 +90,7 @@ void loop() {
 */
 
 //METODO 3 - Binario crudo, con encabezado, longitud y verificacion de integridad.
+
 const int buttonPin4 = 4;
 const int buttonPin5 = 5;
 const int buttonPin6 = 6;
