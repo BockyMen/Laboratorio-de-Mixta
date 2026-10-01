@@ -29,7 +29,7 @@ void loop() {
     left = 0;
   }
   int pot;
-  pot = analogRead(A0); // Colocar bien el pin del potenciometro
+  pot = analogRead(A0);
 
   Serial.print("{\"up\":");
   Serial.print(up);

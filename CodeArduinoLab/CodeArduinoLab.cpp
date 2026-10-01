@@ -1,6 +1,6 @@
 /* 
 
-// METODO 1 - Framing por delimitador
+// METHOD 1 - Delimiter framing
 
 const int buttonPin4 = 4;
 const int buttonPin5 = 5;
@@ -20,18 +20,18 @@ void setup() {
 
 void loop() {
 
-  String mensaje = "";
+  String message = "";
   
-  if (digitalRead(buttonPin4) == LOW) mensaje += "UP";
-  if (digitalRead(buttonPin5) == LOW) mensaje += "RIGHT";
-  if (digitalRead(buttonPin6) == LOW) mensaje += "LEFT";
+  if (digitalRead(buttonPin4) == LOW) message += "UP";
+  if (digitalRead(buttonPin5) == LOW) message += "RIGHT";
+  if (digitalRead(buttonPin6) == LOW) message += "LEFT";
 
-  if (mensaje == "") mensaje = "STOP";
+  if (message == "") message = "STOP";
 
-  int potValor = analogRead(A0); // Colocar bien el pin del potenciometro
-  String velocidad = (potValor > 150) ? "FAST" : "SLOW";
+  int potValue = analogRead(A0);
+  String velocity = (potValue > 150) ? "FAST" : "SLOW";
 
-  Serial.println(mensaje + ":" + velocidad); // UNA sola línea, ej: "UPRIGHT:FAST"
+  Serial.println(message + ":" + velocity);
   Serial.flush();
   delay(50);
 }
@@ -39,7 +39,7 @@ void loop() {
 */
 
 /*
-// METODO 2 - Representacion en JSON
+// METHOD 2 - JSON representation
 
 const int buttonPin4 = 4;
 const int buttonPin5 = 5;
@@ -72,7 +72,7 @@ void loop() {
     left = 0;
   }
   int pot;
-  pot = analogRead(A0); // Colocar bien el pin del potenciometro
+  pot = analogRead(A0);
 
   Serial.print("{\"up\":");
   Serial.print(up);
@@ -87,9 +87,10 @@ void loop() {
   Serial.flush();
   delay(50);
 }
+
 */
 
-//METODO 3 - Binario crudo, con encabezado, longitud y verificacion de integridad.
+//METHOD 3 - Raw binary, with header, length and integrity verification.
 
 const int buttonPin4 = 4;
 const int buttonPin5 = 5;
@@ -105,23 +106,23 @@ void setup() {
 }
 
 void loop() {
-  byte botones = 0;
-  if (digitalRead(buttonPin4) == LOW) botones |= 0b001;
-  if (digitalRead(buttonPin5) == LOW) botones |= 0b010;
-  if (digitalRead(buttonPin6) == LOW) botones |= 0b100;
+  byte buttons = 0;
+  if (digitalRead(buttonPin4) == LOW) buttons |= 0b001;
+  if (digitalRead(buttonPin5) == LOW) buttons |= 0b010;
+  if (digitalRead(buttonPin6) == LOW) buttons |= 0b100;
 
   int pot = analogRead(A0);
-  byte potAlto = pot >> 8;
-  byte potBajo = pot & 0xFF;
+  byte potHigh = pot >> 8;
+  byte potLow = pot & 0xFF;
 
-  byte longitud = 3;
-  byte checksum = longitud ^ botones ^ potAlto ^ potBajo;
+  byte length = 3;
+  byte checksum = length ^ buttons ^ potHigh ^ potLow;
 
   Serial.write(header);
-  Serial.write(longitud);
-  Serial.write(botones);
-  Serial.write(potAlto);
-  Serial.write(potBajo);
+  Serial.write(length);
+  Serial.write(buttons);
+  Serial.write(potHigh);
+  Serial.write(potLow);
   Serial.write(checksum);
 
   Serial.flush();

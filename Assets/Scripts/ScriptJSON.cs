@@ -43,21 +43,21 @@ public class ScriptJSON : MonoBehaviour
             try
             {
                 string data = arduino.ReadLine().Trim();
-                ArduinoData estado = JsonUtility.FromJson<ArduinoData>(data);
+                ArduinoData state = JsonUtility.FromJson<ArduinoData>(data);
 
-                float velocidadMovimiento = velMin + ((estado.pot - potMin) / (potMax - potMin)) * (velMax - velMin);
+                float movementVelocity = velMin + ((state.pot - potMin) / (potMax - potMin)) * (velMax - velMin);
 
-                if (estado.up == 1)
+                if (state.up == 1)
                 {
-                    transform.Translate(Vector3.up * Time.deltaTime * velocidadMovimiento);
+                    transform.Translate(Vector3.up * Time.deltaTime * movementVelocity);
                 }
-                if (estado.right == 1)
+                if (state.right == 1)
                 {
-                    transform.Translate(Vector3.right * Time.deltaTime * velocidadMovimiento);
+                    transform.Translate(Vector3.right * Time.deltaTime * movementVelocity);
                 }
-                if (estado.left == 1)
+                if (state.left == 1)
                 {
-                    transform.Translate(Vector3.left * Time.deltaTime * velocidadMovimiento);
+                    transform.Translate(Vector3.left * Time.deltaTime * movementVelocity);
                 }
             }
             catch (System.TimeoutException)

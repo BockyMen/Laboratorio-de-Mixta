@@ -16,8 +16,8 @@ public class ScriptBinario : MonoBehaviour
     bool up, right, left;
     int pot;
 
-    int paquetesValidos = 0;
-    int paquetesCorruptos = 0;
+    int invalidPackages = 0;
+    int corruptPackages = 0;
 
     void Start()
     {
@@ -44,26 +44,26 @@ public class ScriptBinario : MonoBehaviour
             {
                 if (arduino.ReadByte() == header)
                 {
-                    int longitud = arduino.ReadByte();
-                    byte botones = (byte)arduino.ReadByte();
-                    byte potAlto = (byte)arduino.ReadByte();
-                    byte potBajo = (byte)arduino.ReadByte();
+                    int length = arduino.ReadByte();
+                    byte buttons = (byte)arduino.ReadByte();
+                    byte potHigh = (byte)arduino.ReadByte();
+                    byte potLow = (byte)arduino.ReadByte();
                     byte checksum = (byte)arduino.ReadByte();
 
-                    byte calculado = (byte)(longitud ^ botones ^ potAlto ^ potBajo);
+                    byte calculed = (byte)(length ^ buttons ^ potHigh ^ potLow);
 
-                    if (longitud == 3 && calculado == checksum)
+                    if (length == 3 && calculed == checksum)
                     {
-                        up = (botones & 0b001) != 0;
-                        right = (botones & 0b010) != 0;
-                        left = (botones & 0b100) != 0;
-                        pot = (potAlto << 8) | potBajo;
-                        paquetesValidos++;
+                        up = (buttons & 0b001) != 0;
+                        right = (buttons & 0b010) != 0;
+                        left = (buttons & 0b100) != 0;
+                        pot = (potHigh << 8) | potLow;
+                        invalidPackages++;
                     }
                     else
                     {
-                        paquetesCorruptos++;
-                        Debug.LogWarning("Paquete descartado. Corruptos: " + paquetesCorruptos);
+                        corruptPackages++;
+                        Debug.LogWarning("Invalid Package. Corrupt: " + corruptPackages);
                     }
                 }
             }
@@ -74,11 +74,11 @@ public class ScriptBinario : MonoBehaviour
             Debug.LogWarning(e.Message);
         }
 
-        float velocidadMovimiento = velMin + ((pot - potMin) / (potMax - potMin)) * (velMax - velMin);
+        float movementVelocity = velMin + ((pot - potMin) / (potMax - potMin)) * (velMax - velMin);
 
-        if (up) transform.Translate(Vector3.up * Time.deltaTime * velocidadMovimiento);
-        if (right) transform.Translate(Vector3.right * Time.deltaTime * velocidadMovimiento);
-        if (left) transform.Translate(Vector3.left * Time.deltaTime * velocidadMovimiento);
+        if (up) transform.Translate(Vector3.up * Time.deltaTime * movementVelocity);
+        if (right) transform.Translate(Vector3.right * Time.deltaTime * movementVelocity);
+        if (left) transform.Translate(Vector3.left * Time.deltaTime * movementVelocity);
     }
 
     void OnApplicationQuit()

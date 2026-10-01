@@ -16,18 +16,18 @@ void setup() {
 
 void loop() {
 
-  String mensaje = "";
+  String message = "";
   
-  if (digitalRead(buttonPin4) == LOW) mensaje += "UP";
-  if (digitalRead(buttonPin5) == LOW) mensaje += "RIGHT";
-  if (digitalRead(buttonPin6) == LOW) mensaje += "LEFT";
+  if (digitalRead(buttonPin4) == LOW) message += "UP";
+  if (digitalRead(buttonPin5) == LOW) message += "RIGHT";
+  if (digitalRead(buttonPin6) == LOW) message += "LEFT";
 
-  if (mensaje == "") mensaje = "STOP";
+  if (message == "") message = "STOP";
 
-  int potValor = analogRead(A0); // Colocar bien el pin del potenciometro
-  String velocidad = (potValor > 150) ? "FAST" : "SLOW";
+  int potValue = analogRead(A0);
+  String velocity = (potValue > 150) ? "FAST" : "SLOW";
 
-  Serial.println(mensaje + ":" + velocidad); // UNA sola línea, ej: "UPRIGHT:FAST"
+  Serial.println(message + ":" + velocity);
   Serial.flush();
   delay(50);
 }

@@ -12,23 +12,23 @@ void setup() {
 }
 
 void loop() {
-  byte botones = 0;
-  if (digitalRead(buttonPin4) == LOW) botones |= 0b001;
-  if (digitalRead(buttonPin5) == LOW) botones |= 0b010;
-  if (digitalRead(buttonPin6) == LOW) botones |= 0b100;
+  byte buttons = 0;
+  if (digitalRead(buttonPin4) == LOW) buttons |= 0b001;
+  if (digitalRead(buttonPin5) == LOW) buttons |= 0b010;
+  if (digitalRead(buttonPin6) == LOW) buttons |= 0b100;
 
   int pot = analogRead(A0);
-  byte potAlto = pot >> 8;
-  byte potBajo = pot & 0xFF;
+  byte potHigh = pot >> 8;
+  byte potLow = pot & 0xFF;
 
-  byte longitud = 3;
-  byte checksum = longitud ^ botones ^ potAlto ^ potBajo;
+  byte length = 3;
+  byte checksum = length ^ buttons ^ potHigh ^ potLow;
 
   Serial.write(header);
-  Serial.write(longitud);
-  Serial.write(botones);
-  Serial.write(potAlto);
-  Serial.write(potBajo);
+  Serial.write(length);
+  Serial.write(buttons);
+  Serial.write(potHigh);
+  Serial.write(potLow);
   Serial.write(checksum);
 
   Serial.flush();

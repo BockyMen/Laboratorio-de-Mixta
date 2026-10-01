@@ -5,13 +5,13 @@ using System.IO.Ports;
 
 public class CodeBase : MonoBehaviour
 {
-    SerialPort arduino = new SerialPort("COM3", 9600); //Colocar bien la entrada del arduino
+    SerialPort arduino = new SerialPort("COM3", 9600);
     void Start()
     {
         try
         {
             arduino.Open();
-            arduino.ReadTimeout = 100; // sube esto, 1ms es demasiado corto
+            arduino.ReadTimeout = 100;
         }
         catch (System.TimeoutException)
         {
@@ -29,22 +29,22 @@ public class CodeBase : MonoBehaviour
             try
             {
                 string data = arduino.ReadLine().Trim();
-                string[] partes = data.Split(':');
-                string direccion = partes[0];
-                string velocidad;
-                if (partes.Length > 1){
-                    velocidad = partes[1];
+                string[] parts = data.Split(':');
+                string direction = parts[0];
+                string velocity;
+                if (parts.Length > 1){
+                    velocity = parts[1];
                 }
                 else{
-                    velocidad = "SLOW";
+                    velocity = "SLOW";
                 }
-                float velocidadMovimiento = (velocidad == "FAST") ? 10f : 5f;
+                float movementVelocity = (velocity == "FAST") ? 10f : 5f;
 
-                if (direccion.Contains("UP")) transform.Translate(Vector3.up * Time.deltaTime * velocidadMovimiento);
-                if (direccion.Contains("RIGHT")) transform.Translate(Vector3.right * Time.deltaTime * velocidadMovimiento);
-                if (direccion.Contains("LEFT")) transform.Translate(Vector3.left * Time.deltaTime * velocidadMovimiento);
+                if (direction.Contains("UP")) transform.Translate(Vector3.up * Time.deltaTime * movementVelocity);
+                if (direction.Contains("RIGHT")) transform.Translate(Vector3.right * Time.deltaTime * movementVelocity);
+                if (direction.Contains("LEFT")) transform.Translate(Vector3.left * Time.deltaTime * movementVelocity);
 
-                if (direccion == "STOP") Debug.Log("STOP");
+                if (direction == "STOP") Debug.Log("STOP");
             }
             catch (System.TimeoutException)
             {
