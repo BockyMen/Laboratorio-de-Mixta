@@ -9,6 +9,7 @@ public class ScriptJSON : MonoBehaviour
         public int up;
         public int right;
         public int left;
+        public int pause;
         public int pot;
     }
 
