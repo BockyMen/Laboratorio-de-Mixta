@@ -44,6 +44,8 @@ public class CodeBase : MonoBehaviour
                 if (direction.Contains("RIGHT")) transform.Translate(Vector3.right * Time.deltaTime * movementVelocity);
                 if (direction.Contains("LEFT")) transform.Translate(Vector3.left * Time.deltaTime * movementVelocity);
 
+                if ("PAUSE" == direction) Debug.Log("PAUSE");
+
                 if (direction == "STOP") Debug.Log("STOP");
             }
             catch (System.TimeoutException)

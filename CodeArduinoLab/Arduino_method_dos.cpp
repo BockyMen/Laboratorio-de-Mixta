@@ -1,12 +1,14 @@
 const int buttonPin4 = 4;
 const int buttonPin5 = 5;
 const int buttonPin6 = 6;
+const int buttonPin7 = 7;
 
 void setup() {
   Serial.begin(9600);
   pinMode(buttonPin4, INPUT_PULLUP);
   pinMode(buttonPin5, INPUT_PULLUP);
   pinMode(buttonPin6, INPUT_PULLUP);
+  pinMode(buttonPin7, INPUT_PULLUP);
 }
 
 void loop() {
@@ -28,6 +30,11 @@ void loop() {
   } else {
     left = 0;
   }
+  if (digitalRead(buttonPin7) == LOW) {
+    pause = 1;
+  } else {
+    pause = 0;
+  }
   int pot;
   pot = analogRead(A0);
 
@@ -37,6 +44,8 @@ void loop() {
   Serial.print(right);
   Serial.print(",\"left\":");
   Serial.print(left);
+  Serial.print(",\"pause\":");
+  Serial.print(pause);
   Serial.print(",\"pot\":");
   Serial.print(pot);
   Serial.println("}");

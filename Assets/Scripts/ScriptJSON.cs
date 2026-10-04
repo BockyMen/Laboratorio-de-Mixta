@@ -59,6 +59,10 @@ public class ScriptJSON : MonoBehaviour
                 {
                     transform.Translate(Vector3.left * Time.deltaTime * movementVelocity);
                 }
+                if (state.pause == 1)
+                {
+                    Debug.Log("PAUSE");
+                }
             }
             catch (System.TimeoutException)
             {

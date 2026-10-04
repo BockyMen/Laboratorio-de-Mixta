@@ -1,6 +1,7 @@
 const int buttonPin4 = 4;
 const int buttonPin5 = 5;
 const int buttonPin6 = 6;
+const int buttonPin7 = 7;
 
 void setup() {
   Serial.begin(9600);
@@ -8,10 +9,12 @@ void setup() {
   pinMode(buttonPin4, INPUT);
   pinMode(buttonPin5, INPUT);
   pinMode(buttonPin6, INPUT);
+  pinMode(buttonPin7, INPUT);
 
   digitalWrite(buttonPin4, HIGH);
   digitalWrite(buttonPin5, HIGH);
   digitalWrite(buttonPin6, HIGH);
+  digitalWrite(buttonPin7, HIGH);
 }
 
 void loop() {
@@ -21,7 +24,7 @@ void loop() {
   if (digitalRead(buttonPin4) == LOW) message += "UP";
   if (digitalRead(buttonPin5) == LOW) message += "RIGHT";
   if (digitalRead(buttonPin6) == LOW) message += "LEFT";
-
+  if (digitalRead(buttonPin7) == LOW) message += "PAUSE";
   if (message == "") message = "STOP";
 
   int potValue = analogRead(A0);

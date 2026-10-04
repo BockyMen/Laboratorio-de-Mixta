@@ -13,10 +13,10 @@ public class ScriptBinario : MonoBehaviour
     float velMin = 2f;
     float velMax = 15f;
 
-    bool up, right, left;
+    bool up, right, left, pause, lastPause;
     int pot;
 
-    int invalidPackages = 0;
+    int validPackages = 0;
     int corruptPackages = 0;
 
     void Start()
@@ -57,8 +57,15 @@ public class ScriptBinario : MonoBehaviour
                         up = (buttons & 0b001) != 0;
                         right = (buttons & 0b010) != 0;
                         left = (buttons & 0b100) != 0;
+                        pause = (buttons & 0b1000) != 0;
                         pot = (potHigh << 8) | potLow;
-                        invalidPackages++;
+                        validPackages++;
+
+                        if (pause && !lastPause)
+                        {
+                            Debug.Log("pause");
+                        }
+                        lastPause = pause;
                     }
                     else
                     {
