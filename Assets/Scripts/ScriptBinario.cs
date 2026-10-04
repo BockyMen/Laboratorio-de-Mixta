@@ -13,7 +13,13 @@ public class ScriptBinario : MonoBehaviour
     float velMin = 2f;
     float velMax = 15f;
 
+<<<<<<< Updated upstream
     bool up, right, left;
+=======
+    float ultimoPaquete;
+
+    bool up, right, left, pause, lastPause;
+>>>>>>> Stashed changes
     int pot;
 
     int paquetesValidos = 0;
@@ -54,11 +60,28 @@ public class ScriptBinario : MonoBehaviour
 
                     if (longitud == 3 && calculado == checksum)
                     {
+<<<<<<< Updated upstream
                         up = (botones & 0b001) != 0;
                         right = (botones & 0b010) != 0;
                         left = (botones & 0b100) != 0;
                         pot = (potAlto << 8) | potBajo;
                         paquetesValidos++;
+=======
+                        up = (buttons & 0b001) != 0;
+                        right = (buttons & 0b010) != 0;
+                        left = (buttons & 0b100) != 0;
+                        pause = (buttons & 0b1000) != 0;
+                        pot = (potHigh << 8) | potLow;
+                        validPackages++;
+
+                        if (pause && !lastPause)
+                        {
+                            
+                            
+                            Debug.Log("pause");
+                        }
+                        lastPause = pause;
+>>>>>>> Stashed changes
                     }
                     else
                     {
