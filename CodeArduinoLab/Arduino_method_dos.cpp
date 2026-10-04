@@ -3,7 +3,8 @@ const int buttonPin5 = 5;
 const int buttonPin6 = 6;
 const int buttonPin7 = 7;
 
-void setup() {
+void setup()
+{
   Serial.begin(9600);
   pinMode(buttonPin4, INPUT_PULLUP);
   pinMode(buttonPin5, INPUT_PULLUP);
@@ -11,28 +12,42 @@ void setup() {
   pinMode(buttonPin7, INPUT_PULLUP);
 }
 
-void loop() {
+void loop()
+{
   int up;
-  if (digitalRead(buttonPin4) == LOW) {
+  if (digitalRead(buttonPin4) == LOW)
+  {
     up = 1;
-  } else {
+  }
+  else
+  {
     up = 0;
   }
   int right;
-  if (digitalRead(buttonPin5) == LOW) {
+  if (digitalRead(buttonPin5) == LOW)
+  {
     right = 1;
-  } else {
+  }
+  else
+  {
     right = 0;
   }
   int left;
-  if (digitalRead(buttonPin6) == LOW) {
+  if (digitalRead(buttonPin6) == LOW)
+  {
     left = 1;
-  } else {
+  }
+  else
+  {
     left = 0;
   }
-  if (digitalRead(buttonPin7) == LOW) {
+  int pause;
+  if (digitalRead(buttonPin7) == LOW)
+  {
     pause = 1;
-  } else {
+  }
+  else
+  {
     pause = 0;
   }
   int pot;
