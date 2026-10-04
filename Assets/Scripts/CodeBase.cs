@@ -6,7 +6,8 @@ using System.IO.Ports;
 public class CodeBase : MonoBehaviour
 {
     SerialPort arduino = new SerialPort("COM3", 9600);
-    float ultimoPaquete;
+    float lastMessageTime;
+    bool lastPause;
 
     void Start()
     {
@@ -32,8 +33,8 @@ public class CodeBase : MonoBehaviour
             {
                 string data = arduino.ReadLine().Trim();
 
-                float ms = (Time.realtimeSinceStartup - ultimoPaquete) * 1000f;
-                ultimoPaquete = Time.realtimeSinceStartup;
+                float ms = (Time.realtimeSinceStartup - lastMessageTime) * 1000f;
+                lastMessageTime = Time.realtimeSinceStartup;
 
                 string[] parts = data.Split(':');
                 string direction = parts[0];
@@ -50,9 +51,16 @@ public class CodeBase : MonoBehaviour
                 if (direction.Contains("RIGHT")) transform.Translate(Vector3.right * Time.deltaTime * movementVelocity);
                 if (direction.Contains("LEFT")) transform.Translate(Vector3.left * Time.deltaTime * movementVelocity);
 
-                if ("PAUSE" == direction) Debug.Log("PAUSE - tiempo entre mensajes: " + ms.ToString("F1") + " ms");
+                float msNoDelay = ms - 50f;
 
-                if (direction == "STOP") Debug.Log("STOP");
+                bool pause = direction == "PAUSE";
+                if (pause && !lastPause)
+                {
+                    Debug.Log("PAUSE - time interval: " + msNoDelay.ToString("F1") + " ms");
+                }
+                lastPause = pause;
+
+                if (direction == "STOP");
             }
             catch (System.TimeoutException)
             {

@@ -20,7 +20,7 @@ public class ScriptJSON : MonoBehaviour
     float velMin = 2f;
     float velMax = 15f;
 
-    float ultimoPaquete;
+    float lastMessageTime;
     bool lastPause;
 
     void Start()
@@ -49,8 +49,8 @@ public class ScriptJSON : MonoBehaviour
                 string data = arduino.ReadLine().Trim();
                 ArduinoData state = JsonUtility.FromJson<ArduinoData>(data);
 
-                float ms = (Time.realtimeSinceStartup - ultimoPaquete) * 1000f;
-                ultimoPaquete = Time.realtimeSinceStartup;
+                float ms = (Time.realtimeSinceStartup - lastMessageTime) * 1000f;
+                lastMessageTime = Time.realtimeSinceStartup;
 
                 float movementVelocity = velMin + ((state.pot - potMin) / (potMax - potMin)) * (velMax - velMin);
 
@@ -67,10 +67,11 @@ public class ScriptJSON : MonoBehaviour
                     transform.Translate(Vector3.left * Time.deltaTime * movementVelocity);
                 }
 
+                float msNoDelay = ms - 50f;
                 bool pause = state.pause == 1;
                 if (pause && !lastPause)
                 {
-                    Debug.Log("PAUSE - tiempo entre mensajes: " + ms.ToString("F1") + " ms");
+                    Debug.Log("PAUSE - time interval: " + msNoDelay.ToString("F1") + " ms");
                 }
                 lastPause = pause;
             }

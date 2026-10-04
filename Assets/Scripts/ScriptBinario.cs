@@ -8,7 +8,7 @@ public class ScriptBinario : MonoBehaviour
     const byte header = 0xAA;
     const int length_package = 6;
 
-    float ultimoPaquete;
+    float lastMessageTime;
 
     float potMin = 0f;
     float potMax = 1023f;
@@ -63,12 +63,14 @@ public class ScriptBinario : MonoBehaviour
                         pot = (potHigh << 8) | potLow;
                         validPackages++;
 
-                        float ms = (Time.realtimeSinceStartup - ultimoPaquete) * 1000f;
-                        ultimoPaquete = Time.realtimeSinceStartup;
+                        float ms = (Time.realtimeSinceStartup - lastMessageTime) * 1000f;
+                        lastMessageTime = Time.realtimeSinceStartup;
+
+                        float msNoDelay = ms - 50f;
 
                         if (pause && !lastPause)
                         {
-                            Debug.Log("pause - tiempo entre paquetes: " + ms.ToString("F1") + " ms");
+                            Debug.Log("pause - time interval: " + msNoDelay.ToString("F1") + " ms");
                         }
                         lastPause = pause;
                     }
