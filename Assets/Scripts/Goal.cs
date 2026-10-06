@@ -1,19 +1,19 @@
 using UnityEngine;
 
-public class Meta : MonoBehaviour
+public class Goal : MonoBehaviour
 {
-    public GameObject panelGanaste;
+    public GameObject youWonPanel;
 
     void Start()
     {
-        panelGanaste.SetActive(false);
+        youWonPanel.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            panelGanaste.SetActive(true);
+            youWonPanel.SetActive(true);
             Time.timeScale = 0f;
             Debug.Log("Ganaste");
         }
