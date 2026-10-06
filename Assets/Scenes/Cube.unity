@@ -375,8 +375,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &170424210
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,8 +557,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &209072491
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,8 +739,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &213164846
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,8 +921,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &234030084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,8 +1179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &284945585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,8 +1397,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &386082057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,8 +1579,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &472163589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,8 +1844,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,10 +1995,10 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26f323ff609df7e40be00ef22ba2d992, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Camara
-  jugador: {fileID: 1871368529}
-  suavidad: 5
-  distancia: {x: 0, y: 0, z: -4}
+  m_EditorClassIdentifier: Assembly-CSharp::Camera
+  player: {fileID: 1871368529}
+  smoothness: 5
+  distance: {x: 0, y: 0, z: -3}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2263,8 +2263,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &681028284
 GameObject:
   m_ObjectHideFlags: 0
@@ -2445,8 +2445,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &682835254
 GameObject:
   m_ObjectHideFlags: 0
@@ -2627,8 +2627,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &759528679
 GameObject:
   m_ObjectHideFlags: 0
@@ -2809,8 +2809,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &770781340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2991,8 +2991,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &785435218
 GameObject:
   m_ObjectHideFlags: 0
@@ -3173,8 +3173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &831904017
 GameObject:
   m_ObjectHideFlags: 0
@@ -3355,8 +3355,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &845399055
 GameObject:
   m_ObjectHideFlags: 0
@@ -3537,8 +3537,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &857600121
 GameObject:
   m_ObjectHideFlags: 0
@@ -3719,8 +3719,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &877081824
 GameObject:
   m_ObjectHideFlags: 0
@@ -3901,8 +3901,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &902550869
 GameObject:
   m_ObjectHideFlags: 0
@@ -4083,8 +4083,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &910452989
 GameObject:
   m_ObjectHideFlags: 0
@@ -4340,8 +4340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &939514849
 GameObject:
   m_ObjectHideFlags: 0
@@ -4522,8 +4522,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &947359009
 GameObject:
   m_ObjectHideFlags: 0
@@ -4771,8 +4771,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!50 &1004979788
 Rigidbody2D:
   serializedVersion: 5
@@ -5085,8 +5085,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1039758276
 GameObject:
   m_ObjectHideFlags: 0
@@ -5304,7 +5304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2054565853fbb4994a6cbde681efad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Meta
-  panelGanaste: {fileID: 134391855}
+  youWonPanel: {fileID: 134391855}
 --- !u!1 &1160694941
 GameObject:
   m_ObjectHideFlags: 0
@@ -5485,8 +5485,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1224190664
 GameObject:
   m_ObjectHideFlags: 0
@@ -5667,8 +5667,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1266828050
 GameObject:
   m_ObjectHideFlags: 0
@@ -5849,8 +5849,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1279623987
 GameObject:
   m_ObjectHideFlags: 0
@@ -6168,8 +6168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1299049107
 GameObject:
   m_ObjectHideFlags: 0
@@ -6350,8 +6350,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1301038010
 GameObject:
   m_ObjectHideFlags: 0
@@ -6532,8 +6532,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1321231632
 GameObject:
   m_ObjectHideFlags: 0
@@ -6714,8 +6714,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1342297380
 GameObject:
   m_ObjectHideFlags: 0
@@ -6896,8 +6896,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1354935598
 GameObject:
   m_ObjectHideFlags: 0
@@ -7078,8 +7078,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1372396733
 GameObject:
   m_ObjectHideFlags: 0
@@ -7260,8 +7260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1432008604
 GameObject:
   m_ObjectHideFlags: 0
@@ -7442,8 +7442,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1478848000
 GameObject:
   m_ObjectHideFlags: 0
@@ -7624,8 +7624,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1512035083
 GameObject:
   m_ObjectHideFlags: 0
@@ -7806,8 +7806,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1521545871
 GameObject:
   m_ObjectHideFlags: 0
@@ -7988,8 +7988,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1568078482
 GameObject:
   m_ObjectHideFlags: 0
@@ -8170,8 +8170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1579456832
 GameObject:
   m_ObjectHideFlags: 0
@@ -8352,8 +8352,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1591067284
 GameObject:
   m_ObjectHideFlags: 0
@@ -8534,8 +8534,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1641732882
 GameObject:
   m_ObjectHideFlags: 0
@@ -8716,8 +8716,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1673255311
 GameObject:
   m_ObjectHideFlags: 0
@@ -8898,8 +8898,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1726309064
 GameObject:
   m_ObjectHideFlags: 0
@@ -9184,8 +9184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1811951902
 GameObject:
   m_ObjectHideFlags: 0
@@ -9366,8 +9366,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1871368524
 GameObject:
   m_ObjectHideFlags: 0
@@ -9382,7 +9382,7 @@ GameObject:
   - component: {fileID: 1871368525}
   - component: {fileID: 1871368530}
   - component: {fileID: 1871368532}
-  - component: {fileID: 1871368531}
+  - component: {fileID: 1871368533}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -9544,23 +9544,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871368524}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5422a82ba6561fc4a8184a743d77be49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScriptBinario
---- !u!114 &1871368531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871368524}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6204dfc1989190d479936ec3cdbf0ca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CodeBase
 --- !u!114 &1871368532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9573,6 +9561,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b8eca44ac284047bf6a6466bada054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScriptJSON
+--- !u!114 &1871368533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871368524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6204dfc1989190d479936ec3cdbf0ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CodeBase
 --- !u!1 &1883743633
 GameObject:
   m_ObjectHideFlags: 0
@@ -9828,8 +9828,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1914408289
 GameObject:
   m_ObjectHideFlags: 0
@@ -10010,8 +10010,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1915610350
 GameObject:
   m_ObjectHideFlags: 0
@@ -10420,8 +10420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &1959430839
 GameObject:
   m_ObjectHideFlags: 0
@@ -10602,8 +10602,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &2001840051
 GameObject:
   m_ObjectHideFlags: 0
@@ -10784,8 +10784,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &2014714749
 GameObject:
   m_ObjectHideFlags: 0
@@ -10834,8 +10834,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!50 &2014714752
 Rigidbody2D:
   serializedVersion: 5
@@ -11148,8 +11148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &2053417721
 GameObject:
   m_ObjectHideFlags: 0
@@ -11330,8 +11330,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarraDeVida
   slide: {fileID: 1087720100}
-  "da\xF1o": 100
-  terminaste: {fileID: 234030084}
+  damage: 100
+  youFinished: {fileID: 234030084}
 --- !u!1 &2133614891
 GameObject:
   m_ObjectHideFlags: 0
