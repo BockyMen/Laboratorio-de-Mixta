@@ -27,11 +27,11 @@ public class CodeBase : MonoBehaviour
 
     void Update()
     {
-        while (arduino.IsOpen && arduino.BytesToRead > 0)
+        if (arduino.IsOpen && arduino.BytesToRead > 0)
         {
             try
             {
-                Debug.Log("Buffer: " + arduino.BytesToRead);
+                arduino.DiscardInBuffer();
                 string data = arduino.ReadLine().Trim();
                 Debug.Log("Message: " + data);
 
