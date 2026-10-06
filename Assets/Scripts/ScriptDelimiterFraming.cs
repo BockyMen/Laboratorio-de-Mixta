@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO.Ports;
 
-public class CodeBase : MonoBehaviour
+public class ScriptDelimiterFraming : MonoBehaviour
 {
     SerialPort arduino = new SerialPort("COM3", 9600);
     float lastMessageTime;

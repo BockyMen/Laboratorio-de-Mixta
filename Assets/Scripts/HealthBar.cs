@@ -31,7 +31,7 @@ public class HealthBar : MonoBehaviour
         {
             Death?.Invoke(this, EventArgs.Empty);
 
-            Debug.Log("Entre");
+            Debug.Log("Enter");
 
             slide.value -= damage;
             other.GetComponent<Animator>().SetTrigger("Hurt");

@@ -15,7 +15,7 @@ public class Goal : MonoBehaviour
         {
             youWonPanel.SetActive(true);
             Time.timeScale = 0f;
-            Debug.Log("Ganaste");
+            Debug.Log("You Won");
         }
     }
 }

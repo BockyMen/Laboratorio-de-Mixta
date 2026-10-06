@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.IO.Ports;
 
-public class ScriptBinario : MonoBehaviour
+public class ScriptBinary : MonoBehaviour
 {
     SerialPort arduino = new SerialPort("COM3", 9600);
 
