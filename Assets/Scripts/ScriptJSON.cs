@@ -32,7 +32,7 @@ public class ScriptJSON : MonoBehaviour
         }
         catch (System.TimeoutException)
         {
-            
+
         }
         catch (System.Exception e)
         {
@@ -42,7 +42,7 @@ public class ScriptJSON : MonoBehaviour
 
     void Update()
     {
-        if (arduino.IsOpen)
+        for (int i = 0; i < 3 && arduino.IsOpen && arduino.BytesToRead > 0; i++)
         {
             try
             {
@@ -78,7 +78,7 @@ public class ScriptJSON : MonoBehaviour
             }
             catch (System.TimeoutException)
             {
-                
+
             }
             catch (System.Exception e)
             {

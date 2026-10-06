@@ -42,51 +42,53 @@ public class ScriptBinario : MonoBehaviour
         }
         try
         {
-            while (arduino.BytesToRead >= length_package)
+            int processed = 0;
+
+            while (processed < 3 && arduino.BytesToRead >= length_package)
             {
                 if (arduino.ReadByte() != header)
                     continue;
+
+                processed++;
 
                 byte[] packet = new byte[length_package];
                 packet[0] = header;
                 arduino.Read(packet, 1, length_package - 1);
 
                 Debug.Log("Message: " + System.BitConverter.ToString(packet));
-                if (arduino.ReadByte() == header)
+
+                int length = packet[1];
+                byte buttons = packet[2];
+                byte potHigh = packet[3];
+                byte potLow = packet[4];
+                byte checksum = packet[5];
+
+                byte calculed = (byte)(length ^ buttons ^ potHigh ^ potLow);
+
+                if (length == 3 && calculed == checksum)
                 {
-                    int length = arduino.ReadByte();
-                    byte buttons = (byte)arduino.ReadByte();
-                    byte potHigh = (byte)arduino.ReadByte();
-                    byte potLow = (byte)arduino.ReadByte();
-                    byte checksum = (byte)arduino.ReadByte();
+                    up = (buttons & 0b001) != 0;
+                    right = (buttons & 0b010) != 0;
+                    left = (buttons & 0b100) != 0;
+                    pause = (buttons & 0b1000) != 0;
+                    pot = (potHigh << 8) | potLow;
+                    validPackages++;
 
-                    byte calculed = (byte)(length ^ buttons ^ potHigh ^ potLow);
+                    float ms = (Time.realtimeSinceStartup - lastMessageTime) * 1000f;
+                    lastMessageTime = Time.realtimeSinceStartup;
 
-                    if (length == 3 && calculed == checksum)
+                    float msNoDelay = ms - 50f;
+
+                    if (pause && !lastPause)
                     {
-                        up = (buttons & 0b001) != 0;
-                        right = (buttons & 0b010) != 0;
-                        left = (buttons & 0b100) != 0;
-                        pause = (buttons & 0b1000) != 0;
-                        pot = (potHigh << 8) | potLow;
-                        validPackages++;
-
-                        float ms = (Time.realtimeSinceStartup - lastMessageTime) * 1000f;
-                        lastMessageTime = Time.realtimeSinceStartup;
-
-                        float msNoDelay = ms - 50f;
-
-                        if (pause && !lastPause)
-                        {
-                            Debug.Log("pause - time interval: " + msNoDelay.ToString("F1") + " ms");
-                        }
-                        lastPause = pause;
+                        Debug.Log("pause - time interval: " + msNoDelay.ToString("F1") + " ms");
                     }
-                    else
-                    {
-                        corruptPackages++;
-                        Debug.LogWarning("Invalid Package. Corrupt: " + corruptPackages);
-                    }
+                    lastPause = pause;
+                }
+                else
+                {
+                    corruptPackages++;
+                    Debug.LogWarning("Invalid Package. Corrupt: " + corruptPackages);
                 }
             }
         }
