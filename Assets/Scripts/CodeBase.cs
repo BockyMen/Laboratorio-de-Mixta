@@ -47,9 +47,21 @@ public class CodeBase : MonoBehaviour
                 }
                 float movementVelocity = (velocity == "FAST") ? 10f : 5f;
 
-                if (direction.Contains("UP")) transform.Translate(Vector3.up * Time.deltaTime * movementVelocity);
-                if (direction.Contains("RIGHT")) transform.Translate(Vector3.right * Time.deltaTime * movementVelocity);
-                if (direction.Contains("LEFT")) transform.Translate(Vector3.left * Time.deltaTime * movementVelocity);
+                if (direction.Contains("UP"))
+                {
+                    Debug.Log("UP");
+                    transform.Translate(Vector3.up * Time.deltaTime * movementVelocity);
+                }
+                if (direction.Contains("RIGHT"))
+                {
+                    Debug.Log("RIGHT");
+                    transform.Translate(Vector3.right * Time.deltaTime * movementVelocity);
+                }
+                if (direction.Contains("LEFT"))
+                {
+                    Debug.Log("LEFT");
+                    transform.Translate(Vector3.left * Time.deltaTime * movementVelocity);
+                }
 
                 float msNoDelay = ms - 50f;
 

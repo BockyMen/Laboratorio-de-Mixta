@@ -90,9 +90,21 @@ public class ScriptBinario : MonoBehaviour
 
         float movementVelocity = velMin + ((pot - potMin) / (potMax - potMin)) * (velMax - velMin);
 
-        if (up) transform.Translate(Vector3.up * Time.deltaTime * movementVelocity);
-        if (right) transform.Translate(Vector3.right * Time.deltaTime * movementVelocity);
-        if (left) transform.Translate(Vector3.left * Time.deltaTime * movementVelocity);
+        if (up)
+        {
+            Debug.Log(up);
+            transform.Translate(Vector3.up * Time.deltaTime * movementVelocity);
+        }
+        if (right)
+        {
+            Debug.Log(right);
+            transform.Translate(Vector3.right * Time.deltaTime * movementVelocity);
+        }
+        if (left)
+        {
+            Debug.Log(left);
+            transform.Translate(Vector3.left * Time.deltaTime * movementVelocity);
+        }
     }
 
     void OnApplicationQuit()
