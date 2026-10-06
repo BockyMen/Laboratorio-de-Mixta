@@ -27,12 +27,12 @@ public class CodeBase : MonoBehaviour
 
     void Update()
     {
-        if (arduino.IsOpen)
+        while (arduino.IsOpen && arduino.BytesToRead > 0)
         {
             try
             {
+                Debug.Log("Buffer: " + arduino.BytesToRead);
                 string data = arduino.ReadLine().Trim();
-
                 Debug.Log("Message: " + data);
 
                 float ms = (Time.realtimeSinceStartup - lastMessageTime) * 1000f;
@@ -40,7 +40,11 @@ public class CodeBase : MonoBehaviour
 
                 string[] parts = data.Split(':');
                 string direction = parts[0];
-                string velocity = (parts.Length > 1) ? parts[1] : "SLOW";
+                string velocity;
+                if (parts.Length > 1)
+                    velocity = parts[1];
+                else
+                    velocity = "SLOW";
                 float movementVelocity = (velocity == "FAST") ? 10f : 5f;
 
                 if (direction.Contains("UP"))
