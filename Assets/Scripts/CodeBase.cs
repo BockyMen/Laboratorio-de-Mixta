@@ -49,17 +49,17 @@ public class CodeBase : MonoBehaviour
 
                 if (direction.Contains("UP"))
                 {
-                    Debug.Log("UP");
+                    Debug.Log(message);
                     transform.Translate(Vector3.up * Time.deltaTime * movementVelocity);
                 }
                 if (direction.Contains("RIGHT"))
                 {
-                    Debug.Log("RIGHT");
+                    Debug.Log(message);
                     transform.Translate(Vector3.right * Time.deltaTime * movementVelocity);
                 }
                 if (direction.Contains("LEFT"))
                 {
-                    Debug.Log("LEFT");
+                    Debug.Log(message);
                     transform.Translate(Vector3.left * Time.deltaTime * movementVelocity);
                 }
 
