@@ -3,22 +3,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class BarraDeVida : MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
     public Slider slide;
-    public float daño;
-    public event EventHandler Muerte;      
-    public GameObject terminaste;
+    public float damage;
+    public event EventHandler Death;      
+    public GameObject youFinished;
     void Start()
     {
-        terminaste.SetActive(false);
+        youFinished.SetActive(false);
     }
     void Update()
     {
         if (slide.value <= 0)
         {   
             
-            terminaste.SetActive(true);
+            youFinished.SetActive(true);
 
             Time.timeScale = 0f;
 
@@ -29,11 +29,11 @@ public class BarraDeVida : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Muerte?.Invoke(this, EventArgs.Empty);
+            Death?.Invoke(this, EventArgs.Empty);
 
             Debug.Log("Entre");
 
-            slide.value -= daño;
+            slide.value -= damage;
             other.GetComponent<Animator>().SetTrigger("Hurt");
         }
     }
