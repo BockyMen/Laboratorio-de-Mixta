@@ -47,6 +47,7 @@ public class ScriptJSON : MonoBehaviour
             try
             {
                 string data = arduino.ReadLine().Trim();
+                Debug.Log("Message: " + data);
                 ArduinoData state = JsonUtility.FromJson<ArduinoData>(data);
 
                 float ms = (Time.realtimeSinceStartup - lastMessageTime) * 1000f;
@@ -56,17 +57,14 @@ public class ScriptJSON : MonoBehaviour
 
                 if (state.up == 1)
                 {
-                    Debug.Log(state.up);
                     transform.Translate(Vector3.up * Time.deltaTime * movementVelocity);
                 }
                 if (state.right == 1)
                 {
-                    Debug.Log(state.right);
                     transform.Translate(Vector3.right * Time.deltaTime * movementVelocity);
                 }
                 if (state.left == 1)
                 {
-                    Debug.Log(state.left);
                     transform.Translate(Vector3.left * Time.deltaTime * movementVelocity);
                 }
 

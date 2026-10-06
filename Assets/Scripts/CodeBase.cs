@@ -33,50 +33,37 @@ public class CodeBase : MonoBehaviour
             {
                 string data = arduino.ReadLine().Trim();
 
+                Debug.Log("Message: " + data);
+
                 float ms = (Time.realtimeSinceStartup - lastMessageTime) * 1000f;
                 lastMessageTime = Time.realtimeSinceStartup;
 
                 string[] parts = data.Split(':');
                 string direction = parts[0];
-                string velocity;
-                if (parts.Length > 1){
-                    velocity = parts[1];
-                }
-                else{
-                    velocity = "SLOW";
-                }
+                string velocity = (parts.Length > 1) ? parts[1] : "SLOW";
                 float movementVelocity = (velocity == "FAST") ? 10f : 5f;
 
                 if (direction.Contains("UP"))
-                {
-                    Debug.Log(message);
                     transform.Translate(Vector3.up * Time.deltaTime * movementVelocity);
-                }
+
                 if (direction.Contains("RIGHT"))
-                {
-                    Debug.Log(message);
                     transform.Translate(Vector3.right * Time.deltaTime * movementVelocity);
-                }
+
                 if (direction.Contains("LEFT"))
-                {
-                    Debug.Log(message);
                     transform.Translate(Vector3.left * Time.deltaTime * movementVelocity);
-                }
 
                 float msNoDelay = ms - 50f;
 
                 bool pause = direction == "PAUSE";
                 if (pause && !lastPause)
-                {
                     Debug.Log("PAUSE - time interval: " + msNoDelay.ToString("F1") + " ms");
-                }
                 lastPause = pause;
 
-                if (direction == "STOP");
+                if (direction == "STOP")
+                {
+                }
             }
-            catch (System.TimeoutException)
-            {
-            }
+            catch (System.TimeoutException) { }
             catch (System.Exception e)
             {
                 Debug.LogWarning(e.Message);

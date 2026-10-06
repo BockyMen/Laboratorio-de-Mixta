@@ -44,6 +44,14 @@ public class ScriptBinario : MonoBehaviour
         {
             while (arduino.BytesToRead >= length_package)
             {
+                if (arduino.ReadByte() != header)
+                    continue;
+
+                byte[] packet = new byte[length_package];
+                packet[0] = header;
+                arduino.Read(packet, 1, length_package - 1);
+
+                Debug.Log("Message: " + System.BitConverter.ToString(packet));
                 if (arduino.ReadByte() == header)
                 {
                     int length = arduino.ReadByte();
